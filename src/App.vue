@@ -13,9 +13,15 @@
 import router from "./router";
 import { useRoute } from "vue-router";
 import { ref } from "vue";
+import { onMounted } from "vue";
 const route = useRoute();
 const testText = ref("Hello World!");
 const inputRef = ref("");
+onMounted(() => {
+  setTimeout(() => {
+    testText.value = "TEST VUE ELECTRON";
+  }, 3000);
+});
 const changeText = () => {
   testText.value = inputRef.value;
 };
